@@ -129,6 +129,9 @@ function endPath() {
 }
 
 toolPencil.addEventListener("click", () => {
+    console.log("pencil clicked")
+    pencilFlag = true;
+    eraserFlag = false;
     tool.strokeStyle = pencilColor;
     tool.lineWidth = pencilWidth;
 });
