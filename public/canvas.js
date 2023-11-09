@@ -127,6 +127,11 @@ function endPath() {
     undoRedoTracker.push(url);
     track = undoRedoTracker.length - 1;
 }
+
+toolPencil.addEventListener("click", () => {
+    tool.strokeStyle = pencilColor;
+    tool.lineWidth = pencilWidth;
+});
 // <-------------------------------------- draw control end -------------------------------------->
 
 // <-------------------------------------- download control start -------------------------------------->
@@ -191,5 +196,5 @@ socket.on("drawPath", (data) => {
 });
 
 socket.on("undoRedo", (data) => {
-    undoRedoCanvas(data);   
+    undoRedoCanvas(data);
 });
