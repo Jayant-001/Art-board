@@ -1,12 +1,13 @@
 const express = require("express");
 const socket = require("socket.io");
 const cors = require("cors");
+require('dotenv').config()
 
 const app = express();
 app.use(express.static("public"));
 app.use(cors());
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () => {
     console.log("Server is listening on PORT:", PORT);
 });
